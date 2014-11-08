@@ -11,9 +11,9 @@
 	<div id="app-content">
 		<header>
 			<div class="input-group">
-				<input type="text" class="form-control" placeholder="Add something to do" ng-model="todoInput" ng-keyup="onEnter($event, add)" />
+				<input type="text" class="form-control" placeholder="Add something to do" ng-model="todoInput" ng-keyup="onEnter($event, addFromInput)" />
 				<span class="input-group-btn">
-					<button type="button" class="btn btn-primary" ng-click="add()">
+					<button type="button" class="btn btn-primary" ng-click="addFromInput()">
 						<span class="glyphicon glyphicon-plus" />
 					</button>
 				</span>
@@ -42,7 +42,7 @@
 				</span>
 			</div>
 			<textarea ng-model="activeTodo.description" placeholder="Set a description" ng-change="updateActive()" ng-model-options="{ debounce: 3000 }"></textarea>
-			<button type="button" class="btn btn-danger" ng-click="delete(activeTodo)">Delete</button>
+			<button type="button" class="btn btn-danger" ng-click="deleteWithConfirm(activeTodo)">Delete</button>
 			<button type="button" class="btn btn-link" ng-click="setActive()">Hide</button>
 		</section>
 		<footer>
